@@ -1,0 +1,79 @@
+# Test fixture. Contains EXACTLY three deliberate violations and nothing else:
+#
+#   1. bad_verified_no_url   -- status VERIFIED with a null source_url
+#   2. bad_triangular_order  -- triangular distribution with low > mode
+#   3. bad_bernoulli_p       -- bernoulli distribution with p = 1.2
+#
+# The remaining entry is valid and acts as a control: if the validator reports it,
+# the validator is over-reporting. Keys are synthetic test names, not modelling
+# inputs.
+
+asset_id: test_errors
+asset_name: Error Fixture Asset
+company: Test Company, Inc.
+ticker: TEST
+
+catalyst:
+  trial_id: NCT00000000
+  description: Fixture catalyst, no real trial
+  guided_date: "1H 2099"
+  source_url: https://example.invalid/fixture
+
+parameters:
+
+  # ERROR 1: VERIFIED requires a non-null source_url. as_of is present, so this
+  # entry must produce exactly one message.
+  bad_verified_no_url:
+    value: 0.4
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: publication
+    justification: deliberately VERIFIED without a source_url
+    status: VERIFIED
+    as_of: 2026-01-15
+
+  # ERROR 2: triangular requires low <= mode <= high; here low > mode.
+  bad_triangular_order:
+    value: 10
+    unit: count
+    distribution:
+      type: triangular
+      params:
+        low: 20
+        mode: 10
+        high: 30
+    source_url: null
+    source_type: estimate
+    justification: deliberately ordered low > mode
+    status: ESTIMATE
+    as_of: null
+
+  # ERROR 3: bernoulli requires 0 <= p <= 1; here p = 1.2.
+  bad_bernoulli_p:
+    value: 1.0
+    unit: probability
+    distribution:
+      type: bernoulli
+      params:
+        p: 1.2
+    source_url: null
+    source_type: estimate
+    justification: deliberately out-of-range bernoulli p
+    status: ESTIMATE
+    as_of: null
+
+  # Control: valid in every respect, must produce no message.
+  control_valid:
+    value: 0.75
+    unit: fraction
+    distribution:
+      type: beta
+      params:
+        alpha: 3.0
+        beta: 1.0
+    source_url: https://example.invalid/fixture-control
+    source_type: publication
+    justification: control entry that must not be reported
+    status: VERIFIED
+    as_of: 2026-01-15

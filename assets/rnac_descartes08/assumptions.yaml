@@ -1,0 +1,229 @@
+# Descartes-08 (Cartesian Therapeutics, NASDAQ: RNAC)
+#
+# Every parameter below is a PLACEHOLDER: value and distribution are null and no
+# numeric assumption has been made. Values are sourced and recorded in Phases 2-3
+# (inputs) and Phase 6 (capital structure), each with a source_url, a source_type,
+# an as_of date, and a status promoted from PLACEHOLDER.
+#
+# Do not populate a value here without also recording where it came from.
+
+asset_id: rnac_descartes08
+asset_name: Descartes-08
+company: Cartesian Therapeutics
+ticker: RNAC
+
+catalyst:
+  trial_id: NCT06799247
+  description: Phase 3 AURORA topline, gMG
+  guided_date: "1Q 2027"
+  source_url: https://ir.cartesiantherapeutics.com/news-releases/news-release-details/cartesian-therapeutics-secures-150-million-non-dilutive
+
+parameters:
+
+  # --- Probability of success -------------------------------------------
+  pos_phase3:
+    value: null
+    unit: probability
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  pos_regulatory:
+    value: null
+    unit: probability
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Addressable population -------------------------------------------
+  us_diagnosed_prevalence_gmg:
+    value: null
+    unit: patients
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  achr_positive_fraction:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  eligible_line_fraction:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  treated_fraction:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Uptake ------------------------------------------------------------
+  peak_share:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  uptake_years_to_peak:
+    value: null
+    unit: years
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Price and dosing --------------------------------------------------
+  annual_net_price_usd:
+    value: null
+    unit: usd_per_patient_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  treatment_courses_per_patient:
+    value: null
+    unit: courses_per_patient
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Revenue window ----------------------------------------------------
+  launch_year:
+    value: null
+    unit: calendar_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  exclusivity_end_year:
+    value: null
+    unit: calendar_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Cost structure ----------------------------------------------------
+  cogs_fraction:
+    value: null
+    unit: fraction_of_revenue
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  commercial_opex_peak_frac:
+    value: null
+    unit: fraction_of_revenue
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  rd_cost_to_approval:
+    value: null
+    unit: usd
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  tax_rate:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Discounting -------------------------------------------------------
+  discount_rate:
+    value: null
+    unit: fraction_per_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Capital structure -------------------------------------------------
+  shares_as_converted:
+    value: null
+    unit: shares
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  net_cash:
+    value: null
+    unit: usd
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null
+
+  debt:
+    value: null
+    unit: usd
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: to be sourced in Phases 2-3/6
+    status: PLACEHOLDER
+    as_of: null

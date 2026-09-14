@@ -1,0 +1,69 @@
+# Test fixture. Deliberately valid in every respect.
+#
+# The parameter keys here are synthetic test names, not modelling inputs, so that
+# no number in this file can be mistaken for a sourced assumption about any asset.
+
+asset_id: test_asset
+asset_name: Test Asset
+company: Test Company, Inc.
+ticker: TEST
+
+catalyst:
+  trial_id: NCT00000000
+  description: Fixture catalyst, no real trial
+  guided_date: "1H 2099"
+  source_url: https://example.invalid/fixture
+
+parameters:
+
+  fixture_verified_fraction:
+    value: 0.5
+    unit: fraction
+    distribution:
+      type: beta
+      params:
+        alpha: 2.0
+        beta: 3.0
+    source_url: https://example.invalid/fixture-verified
+    source_type: publication
+    justification: fixture entry exercising a fully VERIFIED parameter
+    status: VERIFIED
+    as_of: 2026-01-15
+
+  fixture_estimated_count:
+    value: 1234
+    unit: count
+    distribution:
+      type: triangular
+      params:
+        low: 1000
+        mode: 1234
+        high: 1500
+    source_url: null
+    source_type: estimate
+    justification: fixture entry exercising the ESTIMATE status rule
+    status: ESTIMATE
+    as_of: null
+
+  fixture_unverified_probability:
+    value: 0.25
+    unit: probability
+    distribution:
+      type: bernoulli
+      params:
+        p: 0.25
+    source_url: https://example.invalid/fixture-unverified
+    source_type: company_pr
+    justification: fixture entry exercising an UNVERIFIED parameter with a URL
+    status: UNVERIFIED
+    as_of: null
+
+  fixture_placeholder:
+    value: null
+    unit: usd
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: fixture entry exercising the PLACEHOLDER status rule
+    status: PLACEHOLDER
+    as_of: null

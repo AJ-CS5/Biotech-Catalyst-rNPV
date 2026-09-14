@@ -1,0 +1,245 @@
+# Template assumptions file.
+#
+# Copy this folder to assets/<asset_id>/ and set asset_id to the new folder name;
+# the loader rejects a file whose asset_id does not match its containing folder.
+#
+# Every parameter entry has exactly these eight fields, and no others:
+#
+#   value:         number or null
+#   unit:          string
+#   distribution:  null, or {type: <type>, params: {...}}
+#   source_url:    string or null
+#   source_type:   sec_filing | trial_registry | publication | cms_pricing |
+#                  fda_document | icer_nice | company_pr | estimate
+#   justification: non-empty string, always
+#   status:        VERIFIED | UNVERIFIED | ESTIMATE | PLACEHOLDER
+#   as_of:         ISO date (YYYY-MM-DD) or null
+#
+# Status rules enforced by the loader:
+#   VERIFIED    -> source_url and as_of must both be non-null
+#   ESTIMATE    -> source_type must be estimate
+#   PLACEHOLDER -> value must be null
+#
+# Distribution types and their required params:
+#   point             {}
+#   bernoulli         {p}                     0 <= p <= 1
+#   beta              {alpha, beta}           alpha > 0, beta > 0
+#   pert              {low, mode, high}       low <= mode <= high
+#   triangular        {low, mode, high}       low <= mode <= high
+#   lognormal         {mu, sigma}             sigma > 0
+#   shifted_lognormal {shift, mu, sigma}      sigma > 0
+#   gamma             {shape, scale}          shape > 0, scale > 0
+#
+# Leave every parameter as a PLACEHOLDER until it has been sourced. Do not write a
+# number here without a source_url, a source_type, and an as_of date.
+
+asset_id: _template
+asset_name: Template Asset
+company: Template Company, Inc.
+ticker: TICK
+
+catalyst:
+  trial_id: NCT00000000
+  description: Pivotal trial topline, indication
+  guided_date: "1H 20XX"
+  source_url: https://example.invalid/replace-with-primary-source
+
+parameters:
+
+  # --- Probability of success -------------------------------------------
+  pos_phase3:
+    value: null
+    unit: probability
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  pos_regulatory:
+    value: null
+    unit: probability
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Addressable population -------------------------------------------
+  us_diagnosed_prevalence:
+    value: null
+    unit: patients
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  eligible_line_fraction:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  treated_fraction:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Uptake ------------------------------------------------------------
+  peak_share:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  uptake_years_to_peak:
+    value: null
+    unit: years
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Price and dosing --------------------------------------------------
+  annual_net_price_usd:
+    value: null
+    unit: usd_per_patient_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  treatment_courses_per_patient:
+    value: null
+    unit: courses_per_patient
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Revenue window ----------------------------------------------------
+  launch_year:
+    value: null
+    unit: calendar_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  exclusivity_end_year:
+    value: null
+    unit: calendar_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Cost structure ----------------------------------------------------
+  cogs_fraction:
+    value: null
+    unit: fraction_of_revenue
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  commercial_opex_peak_frac:
+    value: null
+    unit: fraction_of_revenue
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  rd_cost_to_approval:
+    value: null
+    unit: usd
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  tax_rate:
+    value: null
+    unit: fraction
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Discounting -------------------------------------------------------
+  discount_rate:
+    value: null
+    unit: fraction_per_year
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  # --- Capital structure -------------------------------------------------
+  shares_as_converted:
+    value: null
+    unit: shares
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  net_cash:
+    value: null
+    unit: usd
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null
+
+  debt:
+    value: null
+    unit: usd
+    distribution: null
+    source_url: null
+    source_type: estimate
+    justification: template placeholder; replace with a sourced value
+    status: PLACEHOLDER
+    as_of: null

@@ -1,0 +1,15 @@
+# Reproducibility record for every file under data/raw/.
+#
+# data/raw/ is gitignored; this manifest is the committed evidence trail. One entry
+# per downloaded file, with exactly these fields:
+#
+#   name:      filename as stored under data/raw/
+#   url:       exact URL it was retrieved from
+#   retrieved: ISO date (YYYY-MM-DD)
+#   sha256:    SHA-256 of the file as downloaded, unmodified
+#   notes:     what it is, and which parameters it supports
+#
+# A file with no entry here is not evidence and may not be cited in an
+# assumptions file. See data/README.md.
+
+downloads: []
